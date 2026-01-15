@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🚀 Super Tech
 
-## Getting Started
+Super Tech is a full-stack web application built with Next.js (App Router) and Express.js.
+It allows users to browse tech products, view item details, and add new items through a simple interface.
 
-First, run the development server:
+## 🛠️ Technologies Used
 
-```bash
+Next.js
+
+React
+
+Express.js
+
+Tailwind CSS
+
+Node.js
+
+Vercel
+
+## ⚙️ Setup & Installation
+Clone repositories
+git clone <frontend-repo-url>
+git clone <backend-repo-url>
+
+## Install dependencies
+npm install
+
+## Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Frontend: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Backend: http://localhost:5000
 
-## Learn More
+## 🧭 Routes
+Frontend
 
-To learn more about Next.js, take a look at the following resources:
+/ – Home
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/items – Item list
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/items/[id] – Item details
 
-## Deploy on Vercel
+/add-items – Add new item
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/login – Login page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+404 – Not found page
+
+## Backend
+
+GET /items – Get all items
+
+GET /items/:id – Get item by ID
+
+POST /items – Add new item
+
+## ✅ Features
+
+Responsive navbar with mobile menu
+
+Item listing and item details pages
+
+Loading skeletons for better UX
+
+Add new items via form
+
+Custom 404 page
+
+SEO metadata support
+
+Express REST API
+
+## 🔍 Feature Overview
+
+Items Page: Displays all products in a responsive grid
+
+Item Details: Shows price, rating, image, and description
+
+Add Item: Form to submit new products
+
+Loading States: Skeleton loaders improve user experience
+
+## 🌐 Deployment
+
+Backend deployed on Vercel
+
+Frontend deployed on Vercel
+
+## 👨‍💻 Author
+
+Built for learning and assignment purposes using modern web technologies.
