@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import NavLink from "./NavLink";
 import LogoutButton from "./Button/LogoutButton";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [refetch, setRefetch] = useState(false)
+  const pathname = usePathname();
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -16,14 +17,13 @@ const Navbar = () => {
         });
         const data = await res.json();
         setIsLoggedIn(data.isLoggedIn);
-        setRefetch(!refetch)
       } catch (err) {
         setIsLoggedIn(false);
       }
     };
 
     checkAuth();
-  }, [refetch]);
+  }, [pathname]);
 
   return (
     <header className="bg-gray-900 text-white">
