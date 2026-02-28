@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import toast from "react-hot-toast";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -38,6 +37,7 @@ export default function LoginForm() {
   };
 
   const handleDemoLog = async () => {
+    setError("");
     try {
       const res = await fetch("/api/login", {
         method: "POST",
@@ -45,15 +45,22 @@ export default function LoginForm() {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify({ email: "admin@text.com", password: "123456" }),
+        body: JSON.stringify({ email: "admin@test.com", password: "123456" }),
       });
 
       const data = await res.json();
-      console.log(data);
+
+      if (!res.ok) {
+        setError(data.message || "Demo login failed");
+        return;
+      }
+
+      router.push("/items");
+      router.refresh();
     } catch (error) {
-      console.log(error)
+      setError("Something went wrong. Please try again.");
     }
-  }
+  };
 
   return (
     <div>
